@@ -19,6 +19,9 @@ const Movies = () => {
             <MovieContainer />
             <MovieContainer /> 
       </div>
+
+      <div className="rounded-[10px] text-[#fff]/[90%] flex justify-center mt-[20px] cursor-pointer hover:text-cyan-500/[100%] select-none"><p>View More <div className="w-[20px] ml-[20px] h-[20px] text-cyan-500 cursor-pointer"><ArrowRightCircleIcon /></div></p></div>
+
     </div>
   )
 }

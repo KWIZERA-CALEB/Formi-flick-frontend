@@ -29,6 +29,10 @@ body{
 }
 
 .nav{
+    z-index: 8888;
+}
+
+.over-index{
     z-index: 9999;
 }
 
@@ -39,6 +43,10 @@ body{
 
 .hovered-image:hover{
     cursor: pointer;
-    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
+}
+
+.mobile-nav{
+    z-index: 9999px;
 }

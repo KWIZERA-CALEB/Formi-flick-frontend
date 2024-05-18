@@ -3,7 +3,7 @@ import { PlayIcon } from '@heroicons/react/24/solid'
 
 const MovieContainer = () => {
   return (
-    <div className="rounded-[10px]">
+    <div className="rounded-[10px] shadow-md">
         <div className="relative">
             <img src="/images/bannerimg.jpg" className="object-cover rounded-[10px] mb-[3px] select-none cursor-pointer hovered-image" alt="Movieimage" />
             <div className="w-[40px] h-[40px] text-cyan-500 absolute top-[20px] left-[20px] cursor-pointer hover:animate-spin hover:w-[42px] hover:h-[42px]"><PlayIcon /></div>

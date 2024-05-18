@@ -1,18 +1,16 @@
 import React from 'react'
 import Navigation from '../Components/Navigation'
-import Hero from '../Components/Hero'
-import Movies from '../Components/Movies'
 import Footer from '../Components/Footer'
+import Movies from '../Components/Movies'
 
-const Home = () => {
+const MoviesPage = () => {
   return (
     <div>
       <Navigation />
-      <Hero />
       <Movies />
       <Footer />
     </div>
   )
 }
 
-export default Home
+export default MoviesPage
