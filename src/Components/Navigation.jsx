@@ -54,11 +54,15 @@ const Navigation = () => {
                   <div className="bg-MainBg w-[40px] h-[40px] p-[12px] rounded-full shadow-md cursor-pointer flex justify-center items-center text-[16px] text-textLess/[60%] bg-accentBg  hover:bg-accentBg hover:text-textLess/[100%]"><MagnifyingGlassIcon /></div>
                 </Tooltip>
               </div>
-              <div className="over-index">
-                <Tooltip content="Caleb" placement="bottom" animate={{mount: { scale: 1, y: 0 },unmount: { scale: 0, y: 25 },}}>
-                  <div className="bg-MainBg w-[40px] h-[40px] p-[12px] rounded-full shadow-md cursor-pointer flex justify-center items-center text-[16px] text-textLess/[60%] bg-accentBg  hover:bg-accentBg hover:text-textLess/[100%]"><UserIcon /></div>
-                </Tooltip>
-              </div>
+
+              <Link to={'/login'}>
+                <div className="over-index">
+                  <Tooltip content="Caleb" placement="bottom" animate={{mount: { scale: 1, y: 0 },unmount: { scale: 0, y: 25 },}}>
+                    <div className="bg-MainBg w-[40px] h-[40px] p-[12px] rounded-full shadow-md cursor-pointer flex justify-center items-center text-[16px] text-textLess/[60%] bg-accentBg  hover:bg-accentBg hover:text-textLess/[100%]"><UserIcon /></div>
+                  </Tooltip>
+                </div>
+              </Link>
+
               <div onClick={HandleShowMenu} className="bg-MainBg w-[40px] h-[40px] p-[12px] rounded-full shadow-md cursor-pointer flex justify-center items-center text-[16px] text-textLess/[60%] bg-accentBg  hover:bg-accentBg hover:text-textLess/[100%] flex md:hidden"><Bars3Icon /></div>
           </div> 
       </div>
