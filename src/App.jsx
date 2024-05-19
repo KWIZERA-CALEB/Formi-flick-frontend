@@ -10,6 +10,9 @@ import LoginUser from './Pages/LoginUser'
 import SignupUser from './Pages/SignupUser'
 import SingleMovie from './Pages/SingleMovie'
 import LoginAdmin from './Pages/LoginAdmin'
+import ResetPassAdmin from './Pages/ResetPassAdmin'
+import ResetPassUser from './Pages/ResetPassUser'
+import AdminProfile from './Pages/AdminProfile'
 
 
 
@@ -27,6 +30,9 @@ const App = () => {
         <Route path="/signup" element={<SignupUser />}></Route>
         <Route path="/movie" element={<SingleMovie />}></Route>
         <Route path="/login-admin" element={<LoginAdmin />}></Route>
+        <Route path="/resetpass-admin" element={<ResetPassAdmin />}></Route>
+        <Route path="/resetpass" element={<ResetPassUser />}></Route>
+        <Route path="/profile-admin" element={<AdminProfile />}></Route>
       </Routes>
     </>
   )

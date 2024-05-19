@@ -24,6 +24,9 @@ const LoginUser = () => {
                         <Input />
                         <Button size="lg" className="bg-cyan-500 w-full">Login</Button>
                     </form>
+                    <div className='mb-[10px] mt-[10px]'>
+                        <div className="rounded-[10px] text-[#fff]/[70%] cursor-pointer select-none"><p className="text-center">Forgot password ? <span className="text-red-500"><Link to={'/resetpass'}>Reset</Link></span></p></div>
+                    </div>
                 </div>
 
                 <div className='mb-[20px] mt-[10px]'>

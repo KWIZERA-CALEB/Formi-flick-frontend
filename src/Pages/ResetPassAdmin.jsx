@@ -6,7 +6,7 @@ import { Button } from "@material-tailwind/react";
 import { Link } from 'react-router-dom'
 import { Routes, Route } from 'react-router-dom'
 
-const LoginAdmin = () => {
+const ResetPassAdmin = () => {
   return (
     <>
         <Navigation />
@@ -14,18 +14,17 @@ const LoginAdmin = () => {
         <div className='flex justify-center items-center mt-[40px] p-[20px]'>
             <div className="w-[460px]">
                 <div className='mb-[20px]'>
-                    <h3 className='font-bold text-center text-white/[90%] select-none text-[20px] cursor-pointer'>Login Admins</h3>
-                    <div className="rounded-[10px] text-red-500/[70%] cursor-pointer select-none"><p className="text-center">Login Here requires to be an admin</p></div>
+                    <h3 className='font-bold text-center text-white/[90%] select-none text-[20px] cursor-pointer'>Reset Password Admin</h3>
+                    <div className="rounded-[10px] text-red-500/[70%] cursor-pointer select-none"><p className="text-center">Reseting password Here requires to be an admin</p></div>
                 </div>
 
                 <div className="bg-accentBg h-full pl-[40px] pr-[40px] pt-[40px] pb-[40px] rounded-[10px]">
                     <form action="">
                         <Input />
-                        <Input />
-                        <Button size="lg" className="bg-cyan-500 w-full">Login</Button>
+                        <Button size="lg" className="bg-cyan-500 w-full">Reset Password</Button>
                     </form>
                     <div className='mb-[10px] mt-[10px]'>
-                        <div className="rounded-[10px] text-[#fff]/[70%] cursor-pointer select-none"><p className="text-center">Forgot password ? <span className="text-red-500"><Link to={'/resetpass-admin'}>Reset</Link></span></p></div>
+                        <div className="rounded-[10px] text-[#fff]/[70%] cursor-pointer select-none"><p className="text-center"><Link to={'/'}>Go Back</Link></p></div>
                     </div>
                 </div>
  
@@ -37,4 +36,4 @@ const LoginAdmin = () => {
   )
 }
 
-export default LoginAdmin
+export default ResetPassAdmin
