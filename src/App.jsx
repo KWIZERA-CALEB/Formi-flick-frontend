@@ -13,6 +13,7 @@ import LoginAdmin from './Pages/LoginAdmin'
 import ResetPassAdmin from './Pages/ResetPassAdmin'
 import ResetPassUser from './Pages/ResetPassUser'
 import AdminProfile from './Pages/AdminProfile'
+import UserProfile from './Pages/UserProfile'
 
 
 
@@ -33,6 +34,7 @@ const App = () => {
         <Route path="/resetpass-admin" element={<ResetPassAdmin />}></Route>
         <Route path="/resetpass" element={<ResetPassUser />}></Route>
         <Route path="/profile-admin" element={<AdminProfile />}></Route>
+        <Route path="/profile" element={<UserProfile />}></Route>
       </Routes>
     </>
   )
