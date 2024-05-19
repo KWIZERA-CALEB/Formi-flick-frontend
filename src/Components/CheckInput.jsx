@@ -5,10 +5,12 @@ const CheckInput = () => {
   return (
     <div className="flex flex-row space-x-[20px] items-center">
         <div className="mb-[20px]">
-          <Checkbox />
+          <Checkbox id="confirm"/>
         </div>
         <div className='mb-[20px]'>
-            <div className="rounded-[10px] text-[#fff]/[70%] cursor-pointer select-none"><p className="text-center">Confirm to agree to our terms</p></div>
+            <label htmlFor="confirm">
+              <div className="rounded-[10px] text-[#fff]/[70%] cursor-pointer select-none"><p className="text-center">Confirm to agree to our terms</p></div>
+            </label>
         </div>
     </div>
   )

@@ -50,3 +50,7 @@ body{
 .mobile-nav{
     z-index: 9999px;
 }
+
+.border-left{
+    border-left: 2px solid skyblue;
+}

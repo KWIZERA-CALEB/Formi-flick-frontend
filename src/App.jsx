@@ -8,6 +8,7 @@ import Feedback from './Pages/Feedback'
 import Premium from './Pages/Premium'
 import LoginUser from './Pages/LoginUser'
 import SignupUser from './Pages/SignupUser'
+import SingleMovie from './Pages/SingleMovie'
 
 
 
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/premium" element={<Premium />}></Route>
         <Route path="/login" element={<LoginUser />}></Route>
         <Route path="/signup" element={<SignupUser />}></Route>
+        <Route path="/movie" element={<SingleMovie />}></Route>
       </Routes>
     </>
   )
