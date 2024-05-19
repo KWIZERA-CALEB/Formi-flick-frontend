@@ -54,3 +54,31 @@ body{
 .border-left{
     border-left: 2px solid skyblue;
 }
+
+
+.skeleton {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.skeleton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    background: linear-gradient(90deg, #1a1a1a, #2f4f4f);
+    background-size: 200%;
+    animation: skeleton 1s infinite reverse;
+}
+@keyframes skeleton {
+    0% {
+        background-position: -100% 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}

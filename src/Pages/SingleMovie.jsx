@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navigation from '../Components/Navigation'
 import Footer from '../Components/Footer'
 import Movies from '../Components/Movies'
 import { Button } from "@material-tailwind/react";
+import VideoSkeleton from '../Components/Skeleton/VideoSkeleton';
 
 const SingleMovie = () => {
+    const [skeleton, setSkeleton] = useState(false)
   return (
     <>
         <Navigation />
@@ -13,9 +15,13 @@ const SingleMovie = () => {
                 <h3 className='font-bold text-white/[90%] select-none text-[20px] uppercase cursor-pointer flex flex-row items-center space-x-[30px]'><span className="text-cyan-500">Title</span> : THE BLACK CLOVER</h3>
             </div>
             <div className="w-full pr-[40px] pl-[40px] flex flex-col md:flex-row">
-                <div className="w-full md:w-[70%]">
-                    <video src="/videos/cobel1.mp4" className="w-full" controls></video>
-                </div>
+                {skeleton ? 
+                    <div className="w-full md:w-[70%]">
+                        <video src="/videos/cobel1.mp4" className="w-full" controls></video>
+                    </div>
+                : 
+                    <VideoSkeleton />
+                }
                 <div class="w-[100%] select-none md:w-[30%]">
                     <div className="p-[20px] bg-accentBg rounded-[10px] text-[#fff]/[90%] cursor-pointer hover:text-cyan-500/[100%] select-none"><p>The Black Clover</p></div>
                     <div className="w-full p-[4px] border-left">
@@ -63,12 +69,13 @@ const SingleMovie = () => {
 
             
 
-            <div className='mb-[8px] mt-[30px] p-[40px]'>
-                <h3 className='bg-accentBg font-bold text-white/[30%] p-[10px] select-none text-[20px] uppercase cursor-pointer flex flex-row items-center space-x-[30px]'>You May Also Like</h3>
+            <div className='mb-[8px] mt-[55px] md:mt-[30px] p-[10px]'>
+                <h3 className='bg-accentBg font-bold text-white/[30%] ml-[30px] mr-[30px] p-[10px] select-none text-[20px] uppercase cursor-pointer flex flex-row items-center space-x-[30px] hidden sm:block'>You May Also Like</h3>
                 <div>
                     <Movies />
                 </div>
             </div>
+
             
         </div>
         <Footer />

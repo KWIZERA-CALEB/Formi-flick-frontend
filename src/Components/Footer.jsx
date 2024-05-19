@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div className='w-full h-[100%] p-[40px] pt-[30px] select-none'>
       <div className='w-full h-full bg-accentBg text-white pt-[30px] rounded-[10px] p-[10px] relative'>
-        <div className="w-full h-[40px] flex items-center justify-center text-white/[80%] hover:text-white/[100%] tracking-wider absolute bottom-[10px]">Made with <div className='w-[20px] h-[20px] text-red-500'><HeartIcon /></div> By <a href="https://kwizeracaleb.vercel.app" className="text-cyan-500 cursor-pointer">Caleb</a></div>
+        <div className="w-full h-[40px] flex items-center justify-center text-white/[80%] hover:text-white/[100%] tracking-wider absolute bottom-[10px]">Made with <div className='w-[20px] h-[20px] text-red-500'><HeartIcon /></div> By <a href="https://kwizeracaleb.vercel.app/home.html" className="text-cyan-500 cursor-pointer">Caleb</a></div>
         {/* footer items */}
         <div className="grid grid-cols-1 mb-[50px] gap-[10px] md:grid-cols-4">
             <div className="flex justify-center">
