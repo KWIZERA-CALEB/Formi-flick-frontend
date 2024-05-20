@@ -8,8 +8,8 @@ const UserProfile = () => {
     <>
         <Navigation  />
         <div className="p-[40px] flex flex-col md:flex-row">
-            <div className="bg-accentBg w-full mt-[22px] h-[387.969px] pt-[20px] pl-[40px] pr-[40px] pb-[20px] rounded-[20px] flex flex-col  space-x-[20px] items-center  md:flex-row md:w-[50%]">
-                <div>
+            <div className="bg-accentBg w-full mt-[22px] h-full pt-[20px] pl-[40px] pr-[40px] pb-[20px] rounded-[20px] flex flex-col  space-x-[20px] items-center md:h-[387.969px]  md:flex-row md:w-[50%]">
+                <div className="skeleton">
                     <img src="/images/3d_3.png" className="w-[60px] h-[60px] rounded-[30px] object-cover object-[50% 50%] cursor-pointer outline outline-solid outline-offset-2 outline-cyan-500" alt="Profile" />
                 </div>
                 <div className="flex flex-col space-y-[-80px]">

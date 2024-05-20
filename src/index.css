@@ -32,6 +32,10 @@ body{
     z-index: 8888;
 }
 
+.disabled-mouse{
+    pointer-events: none;
+}
+
 .over-index{
     z-index: 9999;
 }

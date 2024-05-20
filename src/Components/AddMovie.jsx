@@ -8,7 +8,7 @@ const AddMovie = () => {
   return (
     <>
         <h3 className='font-bold text-white/[90%] select-none text-[20px] cursor-pointer text-center'>Add Movie</h3>
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center p-[30px]">
             <div className='bg-accentBg rounded-[20px] w-full p-[30px] md:w-[700px]'>
                 <form action="">
                     <Input />

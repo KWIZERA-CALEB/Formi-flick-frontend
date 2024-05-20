@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import { Routes, Route } from 'react-router-dom'
 import Input from '../Components/Input'
@@ -6,8 +6,46 @@ import Navigation from '../Components/Navigation'
 import Footer from '../Components/Footer'
 import { Button } from "@material-tailwind/react";
 import CheckInput from '../Components/CheckInput'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+import toast from 'react-hot-toast'
+
 
 const SignupUser = () => {
+    const [username, setUsername] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [loading, setLoading] = useState(false)
+    const navigate = useNavigate()
+
+    //function to register the user
+    const signUpUser = (e) => {
+        e.preventDefault()
+
+        const data = {
+            username,
+            email,
+            password
+        }
+
+        setLoading(true)
+
+        axios
+            .post('http://localhost:5000/api/signup', data)
+            .then(()=> {
+                setLoading(false)
+                toast.success('User registered', {position: 'bottom'})
+                navigate('/profile')
+            })
+            .catch((error)=> {
+                console.log(error)
+                setLoading(false)
+                toast.error('User Not registered', {position: 'bottom'})
+            })
+
+    }
+
+
   return (
     <>
         <Navigation />
@@ -21,11 +59,15 @@ const SignupUser = () => {
 
                 <div className="bg-accentBg h-full pl-[40px] pr-[40px] pt-[40px] pb-[40px] rounded-[10px]">
                     <form action="">
-                        <Input />
-                        <Input />
-                        <Input />
+                        <Input type="text" name="username" value={username} onChange={(e)=> setUsername(e.target.value)} placeholder="Username"/>
+                        <Input type="email" name="email" value={email} onChange={(e)=> setEmail(e.target.value)} placeholder="Email"/>
+                        <Input type="password" name="password" value={password} onChange={(e)=> setPassword(e.target.value)}  placeholder="Password"/>
                         <CheckInput />
-                        <Button size="lg" className="bg-cyan-500 w-full">Sign Up</Button>
+                        {loading ? 
+                            <Button size="lg" loading="true" className="bg-cyan-500 w-full flex justify-center">loading...</Button>
+                        : 
+                            <Button size="lg" onClick={signUpUser} className="bg-cyan-500 w-full">Sign Up</Button>
+                        }
                     </form>
                 </div>
 
