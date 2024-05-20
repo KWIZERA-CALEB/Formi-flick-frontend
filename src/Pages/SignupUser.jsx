@@ -16,11 +16,17 @@ const SignupUser = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(false)
     const navigate = useNavigate()
 
     //function to register the user
     const signUpUser = (e) => {
         e.preventDefault()
+
+        if(!username || !email || !password) {
+            setError(true)
+            return false
+        }
 
         const data = {
             username,
@@ -59,9 +65,16 @@ const SignupUser = () => {
 
                 <div className="bg-accentBg h-full pl-[40px] pr-[40px] pt-[40px] pb-[40px] rounded-[10px]">
                     <form action="">
+                        {error && !username && <span className="text-red-500/[70%]">Invalid username</span>}
                         <Input type="text" name="username" value={username} onChange={(e)=> setUsername(e.target.value)} placeholder="Username"/>
+
+                        {error && !email && <span className="text-red-500/[70%]">Invalid email</span>}
                         <Input type="email" name="email" value={email} onChange={(e)=> setEmail(e.target.value)} placeholder="Email"/>
+
+                        {error && !password && <span className="text-red-500/[70%]">Invalid password</span>}
                         <Input type="password" name="password" value={password} onChange={(e)=> setPassword(e.target.value)}  placeholder="Password"/>
+
+                        {error && !confirm && <span className="text-red-500/[70%] hidden">You must agree to our terms</span>}
                         <CheckInput />
                         {loading ? 
                             <Button size="lg" loading="true" className="bg-cyan-500 w-full flex justify-center">loading...</Button>

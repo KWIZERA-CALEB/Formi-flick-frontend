@@ -21,8 +21,8 @@ const LoginUser = () => {
 
                 <div className="bg-accentBg h-full pl-[40px] pr-[40px] pt-[40px] pb-[40px] rounded-[10px]">
                     <form action="">
-                        <Input />
-                        <Input />
+                        <Input type="text" placeholder="Username"/>
+                        <Input type="password" placeholder="Password"/>
                         <Button size="lg" className="bg-cyan-500 w-full">Login</Button>
                     </form>
                     <div className='mb-[10px] mt-[10px]'>
