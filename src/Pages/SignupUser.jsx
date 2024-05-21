@@ -19,6 +19,8 @@ const SignupUser = () => {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(false)
     const navigate = useNavigate()
+    const AppUrl = import.meta.env.VITE_APP_API_URL;
+
 
     //function to register the user
     const signUpUser = (e) => {
@@ -38,7 +40,7 @@ const SignupUser = () => {
         setLoading(true)
 
         axios
-            .post('http://localhost:5000/api/signup', data)
+            .post(`${AppUrl}/signup`, data)
             .then(()=> {
                 setLoading(false)
                 toast.success('User registered', {position: 'bottom'})

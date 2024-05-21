@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Input from '../Components/Input'
 import { Button } from "@material-tailwind/react";
 import TextArea from '../Components/TextArea';
@@ -12,6 +12,19 @@ const AddMovie = () => {
   const [country, setCountry] = useState('')
   const [movie_des, setMoviedes] = useState('')
   const [loading, setLoading] = useState(false)
+  const [thumbnail_img, setFileimg] = useState(null)
+  const [filevid, setFilevideo] = useState()
+  const AppUrl = import.meta.env.VITE_APP_API_URL;
+
+  //clean memory leaks for image preview
+  useEffect(()=> {
+      return ()=> {
+        if(thumbnail_img) {
+          URL.revokeObjectURL(thumbnail_img)
+        }
+      }
+
+  }, [thumbnail_img])
   
 
   const handleAddMovie = (e)=> {
@@ -21,13 +34,14 @@ const AddMovie = () => {
         movie_title,
         productions,
         country,
-        movie_des
+        movie_des,
+        thumbnail_img
       }
 
       setLoading(true)
 
       axios
-        .post('http://localhost:5000/api/addmovie', data)
+        .post(`${AppUrl}/addmovie`, data)
             .then(()=> {
               setLoading(false)
               toast.success('Movie added', {position: 'bottom'})
@@ -49,8 +63,11 @@ const AddMovie = () => {
                     <Input placeholder="Productions Company" name="productions_company" value={productions} onChange={(e)=> setProductions(e.target.value)}  />
                     <Input placeholder="Country" name="country" value={country} onChange={(e)=> setCountry(e.target.value)} />
                     <TextArea placeholder='Movie descr...' name="movie_des" value={movie_des} onChange={(e)=> setMoviedes(e.target.value)} />
-                    <FileChoose input_place="Movie Thumnail" name="movie_thumb"/>
-                    <FileChoose input_place="Movie video" name="movie_vid"/>
+                    <div>
+                      <FileChoose input_place="Movie Thumbnail" id="choose_file" name="thumbnail_img" onChange={(e)=> setFileimg(URL.createObjectURL(e.target.files[0]))} />
+                      <img src={thumbnail_img} className="w-[180px] h-[80px] rounded-[15px] object-cover object-[50% 50%] mb-[5px] cursor-pointer" alt="" />
+                    </div>
+                    <FileChoose input_place="Movie video" name="movie_vid" onChange={(e)=> setFilevideo(URL.createObjectURL(e.target.files[0]))} />
                     {loading ? 
                           <Button size="lg" loading="true" className="bg-cyan-500 w-full flex justify-center">loading...</Button>
                         : 
@@ -59,6 +76,8 @@ const AddMovie = () => {
                 </form>
             </div>
         </div>
+        
+      
     </>
   )
 }

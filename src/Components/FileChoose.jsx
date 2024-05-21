@@ -13,7 +13,7 @@ const FileChoose = (props) => {
                     </div>
                 </div>
           </label>
-          <input type="file" id="choose_file" name={props.name} className="hidden" />
+          <input type="file" id={props.id} name={props.name} onChange={props.onChange} className="hidden" />
       </form>
     </div>
   )
