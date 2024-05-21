@@ -32,6 +32,10 @@ body{
     z-index: 8888;
 }
 
+/* .hide{
+    display: none;
+} */
+
 .disabled-mouse{
     pointer-events: none;
 }

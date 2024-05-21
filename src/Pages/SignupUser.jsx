@@ -11,6 +11,7 @@ import { useNavigate } from 'react-router-dom'
 import toast from 'react-hot-toast'
 
 
+
 const SignupUser = () => {
     const [username, setUsername] = useState('')
     const [email, setEmail] = useState('')
@@ -47,6 +48,7 @@ const SignupUser = () => {
                 console.log(error)
                 setLoading(false)
                 toast.error('User Not registered', {position: 'bottom'})
+                
             })
 
     }

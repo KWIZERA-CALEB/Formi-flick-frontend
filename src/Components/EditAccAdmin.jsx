@@ -9,10 +9,10 @@ const EditAccAdmin = () => {
         <h3 className='font-bold text-white/[90%] select-none text-[20px] cursor-pointer text-center'>Edit Account</h3>
         <form action="">
             <div className="w-full p-[10px]">
-                <Input />
-                <Input />
-                <Input />
-                <Input />
+                <Input type="text" placeholder="Username"/>
+                <Input type="password" placeholder="Old password"/>
+                <Input type="password" placeholder="New password"/>
+                <Input type="password" placeholder="Confirm password"/>
                 <Button size="lg" className="bg-cyan-500 w-full">Change</Button>
             </div>
         </form>
