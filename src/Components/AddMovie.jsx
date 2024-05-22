@@ -41,7 +41,11 @@ const AddMovie = () => {
       setLoading(true)
 
       axios
-        .post(`${AppUrl}/addmovie`, data)
+        .post(`${AppUrl}/addmovie`, data, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
+        })
             .then(()=> {
               setLoading(false)
               toast.success('Movie added', {position: 'bottom'})
@@ -58,14 +62,14 @@ const AddMovie = () => {
         <h3 className='font-bold text-white/[90%] select-none text-[20px] cursor-pointer text-center'>Add Movie</h3>
         <div className="flex justify-center items-center p-[30px]">
             <div className='bg-accentBg rounded-[20px] w-full p-[30px] md:w-[700px]'>
-                <form action="">
+                <form encType="multipart/form-data">
                     <Input placeholder="Movie title" name="movie_title" value={movie_title} onChange={(e)=> setMovietitle(e.target.value)} />
                     <Input placeholder="Productions Company" name="productions_company" value={productions} onChange={(e)=> setProductions(e.target.value)}  />
                     <Input placeholder="Country" name="country" value={country} onChange={(e)=> setCountry(e.target.value)} />
                     <TextArea placeholder='Movie descr...' name="movie_des" value={movie_des} onChange={(e)=> setMoviedes(e.target.value)} />
                     <div>
-                      <FileChoose input_place="Movie Thumbnail" id="choose_file" name="thumbnail_img" onChange={(e)=> setFileimg(URL.createObjectURL(e.target.files[0]))} />
-                      <img src={thumbnail_img} className="w-[180px] h-[80px] rounded-[15px] object-cover object-[50% 50%] mb-[5px] cursor-pointer" alt="" />
+                      <FileChoose input_place="Movie Thumbnail" id="choose_file" name="thumbnail_img" onChange={(e)=> setFileimg(e.target.files[0])} />
+                      {/* <img src={thumbnail_img} className="w-[180px] h-[80px] rounded-[15px] object-cover object-[50% 50%] mb-[5px] cursor-pointer" alt="" /> */}
                     </div>
                     <FileChoose input_place="Movie video" name="movie_vid" onChange={(e)=> setFilevideo(URL.createObjectURL(e.target.files[0]))} />
                     {loading ? 
