@@ -43,9 +43,9 @@ const MovieContainer = () => {
           </div>
       
       : 
-        <div>
+        <>
           {movies.map((movie, index)=> (
-              <>
+              
                 <div className="rounded-[10px] shadow-md" key={movie._id}>
                     <div className="relative">
                         <Link to={'/movie'}>
@@ -59,9 +59,9 @@ const MovieContainer = () => {
                       <div className="uppercase p-[20px] bg-accentBg rounded-[10px] text-[#fff]/[90%] cursor-pointer hover:text-cyan-500/[100%] select-none"><p>{movie.movie_title}</p></div>
                     </Link>
                 </div>
-              </>
+              
           ))}
-        </div>
+        </>
       
       }
       

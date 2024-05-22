@@ -3,6 +3,8 @@ import { ArrowRightCircleIcon } from '@heroicons/react/24/solid'
 import MovieContainer from './MovieContainer'
 
 
+
+
 const Movies = () => {
   return (
     <div className='mt-[60px] p-[30px]'>
