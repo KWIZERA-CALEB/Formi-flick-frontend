@@ -78,15 +78,16 @@ body{
     width: 100%;
     height: 100%;
     z-index: 10;
-    background: linear-gradient(90deg, #1a1a1a, #2f4f4f);
+    background-color: rgb(56,56,56);
+    /* background: linear-gradient(90deg, #1a1a1a, #2f4f4f); */
     background-size: 200%;
-    animation: skeleton 1s infinite reverse;
+    /* animation: skeleton 1s infinite reverse; */
 }
-@keyframes skeleton {
+/* @keyframes skeleton {
     0% {
         background-position: -100% 0;
     }
     100% {
         background-position: 100% 0;
     }
-}
+} */

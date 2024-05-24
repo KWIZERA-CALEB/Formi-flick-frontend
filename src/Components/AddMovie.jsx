@@ -13,7 +13,7 @@ const AddMovie = () => {
   const [movie_des, setMoviedes] = useState('')
   const [loading, setLoading] = useState(false)
   const [thumbnail_img, setFileimg] = useState(null)
-  const [filevid, setFilevideo] = useState()
+  const [movie_video, setFilevideo] = useState(null)
   const AppUrl = import.meta.env.VITE_APP_API_URL;
 
   //clean memory leaks for image preview
@@ -35,7 +35,8 @@ const AddMovie = () => {
         productions,
         country,
         movie_des,
-        thumbnail_img
+        thumbnail_img,
+        movie_video
       }
 
       setLoading(true)
@@ -71,7 +72,7 @@ const AddMovie = () => {
                       <FileChoose input_place="Movie Thumbnail" id="choose_file" name="thumbnail_img" onChange={(e)=> setFileimg(e.target.files[0])} />
                       {/* <img src={thumbnail_img} className="w-[180px] h-[80px] rounded-[15px] object-cover object-[50% 50%] mb-[5px] cursor-pointer" alt="" /> */}
                     </div>
-                    <FileChoose input_place="Movie video" name="movie_vid" onChange={(e)=> setFilevideo(URL.createObjectURL(e.target.files[0]))} />
+                    <FileChoose input_place="Movie video" name="movie_video" onChange={(e)=> setFilevideo(e.target.files[0])} />
                     {loading ? 
                           <Button size="lg" loading="true" className="bg-cyan-500 w-full flex justify-center">loading...</Button>
                         : 
