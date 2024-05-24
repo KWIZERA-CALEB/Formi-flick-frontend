@@ -97,5 +97,5 @@ body{
 }
 
 .play:hover{
-    transform: rotate(90deg);
+    transform: rotate(360deg);
 }
